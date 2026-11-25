@@ -218,3 +218,31 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Secrets: never commit API keys
+.env
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python bytecode and caches
+__pycache__/
+*.pyc
+.ruff_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Large data files: the code downloads them (see the README)
+data/
+goodbooks-10k-master/
+
+# Old drafts, kept only on my computer
+_old_version/
