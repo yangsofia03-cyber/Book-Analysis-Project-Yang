@@ -110,9 +110,13 @@ def genre_era_heatmap(table, overall_mean):
     fig = px.imshow(
         table,
         text_auto=".2f",
-        color_continuous_scale="RdBu",
+        color_continuous_scale="RdBu", 
+        #built-in colour scale: Red → white → Blue. It's a diverging scale, 
+        # meaning two colours moving away from a neutral middle.
         color_continuous_midpoint=overall_mean,
+        #puts white exactly at the overall mean.
         aspect="auto",
+        #"auto" lets the cells stretch to fill the available space
         labels={"x": "Publication era", "y": "", "color": "Mean rating"},
         title="Mean rating by genre and era",
     )
@@ -143,6 +147,7 @@ def author_timeline(works, authors):
         y="average_rating",
         color="main_author",
         markers=True,
+        # adds a dot at each book
         hover_name="short_title",
         hover_data={"ratings_count": ":,", "main_author": False},
         labels=LABELS,
