@@ -84,7 +84,7 @@ def group_statistics(books, group, value="average_rating", min_size=30):
         ci_low=table["mean"] - half_width, ci_high=table["mean"] + half_width
     )
 
-# this function builds a grid: one row per genre, pone column per era, and in each cell the average
+# this function builds a grid: one row per genre, one column per era, and in each cell the average
 # rating of the books in that genre and era. Cells based on too few books are left empty, and
 # genres are sorted from best-rated to worst. 
 def genre_era_table(books, min_books=10):
@@ -159,7 +159,7 @@ def star_shares_long(books, title_column="short_title"):
     wide["title"] = books[title_column].to_numpy()
     return wide.melt(id_vars="title", var_name="stars", value_name="share")
 
-# #books[star_columns] selects just those 5 columns.
+##books[star_columns] selects just those 5 columns.
 ##.to_numpy(dtype=float) converts them from a pandas table into 
 # a NumPy array, a bare grid of numbers with no labels, stored as 
 # decimals (float) so the division later gives exact decimals.
